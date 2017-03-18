@@ -46,3 +46,6 @@ https://elixircasts.io/deploying-elixir-with-heroku
   * heroku config:set SECRET_KEY_BASE="2cq/NBdRzqk4cEGstcPURl0R4WRS/LWJRa42/LThT26drLeMyO8eGV7/EBxrOvQS"
 
   * git push heroku master
+
+URL: https://calm-brushlands-14022.herokuapp.com/
+DATABASE_URL: postgresql-parallel-52093
