@@ -19,7 +19,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
 
-###
+### Teacher blog website part1
   * mix phoenix.new Teacher
   * mix ecto.create
   * mix phoenix.gen.html Post posts title:string body:text
@@ -27,4 +27,11 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   resources "/posts", PostController
   * mix ecto.migrate
   * mix phoenix.routes
-  
+
+### adding comment model
+
+  * mix phoenix.gen.model Comment comments body:text post_id:references:posts
+
+### deploying elixir to heroku
+
+  * heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"
