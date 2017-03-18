@@ -45,7 +45,13 @@ https://elixircasts.io/deploying-elixir-with-heroku
 
   * heroku config:set SECRET_KEY_BASE="2cq/NBdRzqk4cEGstcPURl0R4WRS/LWJRa42/LThT26drLeMyO8eGV7/EBxrOvQS"
 
+deploy source code to heroku server
   * git push heroku master
+
+run ecto.migrate to create tables
+  * heroku run "POOL_SIZE=2" mix ecto.migrate"
+
+once the ecto.migrate is done then we can open our app on heroku
 
 URL: https://calm-brushlands-14022.herokuapp.com/
 DATABASE_URL: postgresql-parallel-52093
