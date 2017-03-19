@@ -55,3 +55,34 @@ once the ecto.migrate is done then we can open our app on heroku
 
 URL: https://calm-brushlands-14022.herokuapp.com/
 DATABASE_URL: postgresql-parallel-52093
+
+
+### add movie model with pagination using scrivener
+https://elixircasts.io/elixir-pagination-with-scrivener
+
+  * mix phoenix.gen.html Movie movies title:string summary:text year:string
+
+  * Modified priv/repo/seeds.exs to pre-populated movies table
+
+  * mix run priv/repo/seeds.exs
+
+  * Added :scrivener_html and :scrivener_ecto packages to mix.exs
+
+  * Modified config.exs to add :scrivener_html routes
+
+  * mix deps.get
+
+  Replaced
+  <%= if @page.page_number > 1 do %>
+    <%= link "Prev Page", to: movie_path(@conn, :index, page: @page.page_number-1) %>
+  <% end %>
+  |
+  <%= if @page.page_number < @page.total_pages do %>
+    <%= link "Next Page", to: movie_path(@conn, :index, page: @page.page_number + 1) %>
+  <% end %>
+
+ with
+ <%= pagination_links @page%>
+
+* scrivener_ecto : https://github.com/drewolson/scrivener_ecto
+* scrivener_html : https://github.com/mgwidmann/scrivener_html
