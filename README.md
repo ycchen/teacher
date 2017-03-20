@@ -86,3 +86,15 @@ https://elixircasts.io/elixir-pagination-with-scrivener
 
 * scrivener_ecto : https://github.com/drewolson/scrivener_ecto
 * scrivener_html : https://github.com/mgwidmann/scrivener_html
+
+### versioned API
+
+  * Modified web/router.ex to add api routes
+
+  * Create web/controllers/api/v1/movie_controller.ex
+
+  * Create web/views/api/v1/movie_view.ex
+
+  * https://github.com/mschae/trailing_format_plug
+
+  
