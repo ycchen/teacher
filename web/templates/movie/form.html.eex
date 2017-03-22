@@ -18,6 +18,11 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :summary_markup, class: "control-label" %>
+    <%= textarea f, :summary_markup, class: "form-control", rows: 10 %>
+    <%= error_tag f, :summary_markup %>
+  </div>
+  <div class="form-group">
     <%= label f, :year, class: "control-label" %>
     <%= text_input f, :year, class: "form-control" %>
     <%= error_tag f, :year %>

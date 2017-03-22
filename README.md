@@ -97,4 +97,22 @@ https://elixircasts.io/elixir-pagination-with-scrivener
 
   * https://github.com/mschae/trailing_format_plug
 
-  
+### Parsing Markdown in Elixir Earmark
+
+  * Add Earmark 1.2.0
+
+  * General migration for adding summary_markup column
+
+  http://ricostacruz.com/cheatsheets/phoenix-migrations.html
+
+  mix ecto.gen.migration add_summary_markup_to_movies_table
+  * creating priv/repo/migrations
+* creating priv/repo/migrations/20170322183740_add_summary_markup_to_movies_table.exs
+
+  * mix ecto.migrate
+
+  * modified seeds.exs to insert markup content to summary_markup columns
+
+  * refactor movie_view to create as_html() to handle markup content
+
+  * Use Earmark.Options in the as_html() helper method

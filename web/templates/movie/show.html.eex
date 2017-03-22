@@ -11,7 +11,10 @@
     <strong>Summary:</strong>
     <%= @movie.summary %>
   </li>
-
+  <li>
+    <strong>Summary_markup:</strong>
+    <%= as_html(@movie.summary_markup) %>
+  </li>
   <li>
     <strong>Year:</strong>
     <%= @movie.year %>

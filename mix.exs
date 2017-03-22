@@ -40,7 +40,8 @@ defmodule Teacher.Mixfile do
      {:cowboy, "~> 1.0"},
      {:scrivener_ecto, "~> 1.0"},
      {:scrivener_html, "~> 1.1"},
-     {:trailing_format_plug, "~> 0.0.5"}]
+     {:trailing_format_plug, "~> 0.0.5"},
+     {:earmark, "~> 1.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
