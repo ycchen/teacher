@@ -4,6 +4,7 @@ defmodule Teacher.Movie do
   schema "movies" do
     field :title, :string
     field :summary, :string
+    field :summary_markup, :string
     field :year, :string
 
     timestamps()
@@ -14,7 +15,7 @@ defmodule Teacher.Movie do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :summary, :year])
-    |> validate_required([:title, :summary, :year])
+    |> cast(params, [:title, :summary, :summary_markup, :year])
+    |> validate_required([:title, :summary, :summary_markup, :year])
   end
 end
