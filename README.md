@@ -116,3 +116,9 @@ https://elixircasts.io/elixir-pagination-with-scrivener
   * refactor movie_view to create as_html() to handle markup content
 
   * Use Earmark.Options in the as_html() helper method
+
+### SEO Friendly URLs with Phoenix
+
+  * Add faker ~> 0.7 to mix.exs
+
+  * mix deps.get

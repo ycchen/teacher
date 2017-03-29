@@ -19,7 +19,7 @@ defmodule Teacher.Mixfile do
   def application do
     [mod: {Teacher, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :scrivener_ecto, :scrivener_html]]
+                    :phoenix_ecto, :postgrex, :scrivener_ecto, :scrivener_html, :faker]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,7 +41,8 @@ defmodule Teacher.Mixfile do
      {:scrivener_ecto, "~> 1.0"},
      {:scrivener_html, "~> 1.1"},
      {:trailing_format_plug, "~> 0.0.5"},
-     {:earmark, "~> 1.1"}]
+     {:earmark, "~> 1.1"},
+     {:faker, "~> 0.7"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
