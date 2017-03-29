@@ -122,3 +122,19 @@ https://elixircasts.io/elixir-pagination-with-scrivener
   * Add faker ~> 0.7 to mix.exs
 
   * mix deps.get
+
+  * Add preload post tables using seeds.exs
+
+  * Generate migration add_slug_to_posts
+
+  * mix ecto.gen.migration add_slug_to_posts
+
+  ==============
+  alter table(:posts) do
+    add :slug, :string
+  end
+  create index(:posts, [:slug], unique: true)
+  ==============
+
+  * mix ecto.migrate
+  
