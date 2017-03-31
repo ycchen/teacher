@@ -141,18 +141,18 @@ It is the spring of 1861. Scarlett O'Hara, a pretty Southern belle, lives on Tar
   year: "1950"}
   }
 
-  IO.puts "--- Deleting existing movies ---"
-  Repo.delete_all Movie
-  IO.puts "--- Create movies ---"
-  for index <- 0..11 do
-    Repo.insert!(%Movie{
-      title: movies_map[index][:title],
-      summary: movies_map[index][:summary],
-      summary_markup: movies_map[index][:summary_markup],
-      year: movies_map[index][:year]
-      })
-      IO.inspect movies_map[index][:title]
-  end
+  # IO.puts "--- Deleting existing movies ---"
+  # Repo.delete_all Movie
+  # IO.puts "--- Create movies ---"
+  # for index <- 0..11 do
+  #   Repo.insert!(%Movie{
+  #     title: movies_map[index][:title],
+  #     summary: movies_map[index][:summary],
+  #     summary_markup: movies_map[index][:summary_markup],
+  #     year: movies_map[index][:year]
+  #     })
+  #     IO.inspect movies_map[index][:title]
+  # end
 
   IO.puts "--- Delete old Post records ---"
   Repo.delete_all Post

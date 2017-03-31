@@ -137,4 +137,21 @@ https://elixircasts.io/elixir-pagination-with-scrivener
   ==============
 
   * mix ecto.migrate
+
+  ============update slug column in the console =====
+
+  > alias Teacher.{Repo, Post}
+  # create a function to convert title to slug
+  >slugify_post = fn(post) ->
+  > slug = String.downcase(post.title) |> String.replace(" ", "-")
+  > post_params = %{"slug" => slug}
+  > changeset = Post.changeset(post, post_params)
+  > Repo.update(changeset)
+  >end
+
+  ##### get all posts out
+  > posts = Repo.all(Post)
+
+  ##### calls slugify_post function to update slug column
+  > Enum.map(posts, slugify_post)
   

@@ -29,23 +29,23 @@ defmodule Teacher.PostController do
   end
 
   def show(conn, %{"id" => id}) do
-    post = Post
-           |> Repo.get(id)
-           |> Repo.preload(:comments)
-    # post = Repo.get!(Post, id)
-    # post = Repo.preload(post, :comments)
+    # post = Post
+    #        |> Repo.get_by!(slug: id)
+    #        |> Repo.preload(:comments)
+    post = Repo.get_by!(Post, slug: id)
+    post = Repo.preload(post, :comments)
     comment_changeset = Comment.changeset(%Comment{})
     render(conn, "show.html", post: post, comment_changeset: comment_changeset)
   end
 
   def edit(conn, %{"id" => id}) do
-    post = Repo.get!(Post, id)
+    post = Repo.get_by!(Post, slug: id)
     changeset = Post.changeset(post)
     render(conn, "edit.html", post: post, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "post" => post_params}) do
-    post = Repo.get!(Post, id)
+    post = Repo.get_by!(Post, slug: id)
     changeset = Post.changeset(post, post_params)
 
     case Repo.update(changeset) do
@@ -59,7 +59,7 @@ defmodule Teacher.PostController do
   end
 
   def delete(conn, %{"id" => id}) do
-    post = Repo.get!(Post, id)
+    post = Repo.get_by!(Post, slug: id)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
